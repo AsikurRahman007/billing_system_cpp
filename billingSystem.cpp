@@ -12,21 +12,18 @@ public:
     Product(int id, string name, double price) : id(id), name(name), price(price) {}
 };
 
-// Class to manage the billing system
 class BillingSystem
 {
 private:
-    vector<Product> products;        // Available products
-    vector<pair<Product, int>> cart; // Cart with product and quantity
+    vector<Product> products;
+    vector<pair<Product, int>> cart;
 
 public:
-    // Constructor to initialize available products (load from file)
     BillingSystem()
     {
         loadProductsFromFile("products.txt");
     }
 
-    // Load products from file
     void loadProductsFromFile(const string &filename)
     {
         ifstream file(filename);
